@@ -16,7 +16,7 @@ We recommend running XFuse on a GPU with at least 8 GB of VRAM.
 * Software requirements
 
 XFuse has been tested on GNU/Linux but should run on all major operating systems.
-XFuse requires Python 3.7.
+XFuse requires Python 3.8.
 All other dependencies are pulled in by ~pip~ during the installation.
 
 * Installing

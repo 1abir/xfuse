@@ -58,7 +58,7 @@ class StatsHandler(Messenger, metaclass=ABCMeta):
             self._handle(**msg)
 
 
-def log_figure(tag: str, figure: matplotlib.figure.Figure, **kwargs,) -> None:
+def log_figure(tag: str, figure: matplotlib.pyplot.figure.Figure, **kwargs,) -> None:
     r"""
     Converts :class:`~matplotlib.figure.Figure`` to image data and logs it
     using :func:`log_image`

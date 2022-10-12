@@ -34,7 +34,7 @@ class Extra(ExpansionStrategy):
         self,
         num_metagenes: int = 4,
         anneal_to: Optional[int] = 1,
-        anneal_epochs: Optional[int] = 10000,
+        anneal_epochs: Optional[int] = 111,
     ):
         self.__num_from = num_metagenes
         self.__num_to = anneal_to

@@ -1,0 +1,6 @@
+xfuse\_config.py
+line 155: 20000 -> 200
+line 156: 3e-4 -> .01
+
+xfuse\model\experiment\st\metagene_expansion_strategy.py
+line 37: 10000 -> 111

@@ -152,8 +152,8 @@ _ANNOTATED_CONFIG = OrderedDict(
                 value=OrderedDict(
                     [
                         ("batch_size", Item(value=4)),
-                        ("epochs", Item(value=20000)),
-                        ("learning_rate", Item(value=3e-4)),
+                        ("epochs", Item(value=200)),
+                        ("learning_rate", Item(value=.01)),
                         (
                             "patch_size",
                             Item(

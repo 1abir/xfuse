@@ -143,15 +143,22 @@ def _run_gene_maps_analysis(
                 x = mask_background(x, tissue_mask)
             return x
 
+        def save_gene_expression(x, filename):
+            if tissue_mask is not None:
+                x = mask_background(x, tissue_mask)
+            np.save(filename, x)
+
         imwrite(f"{gene}_mean.{fileformat}", _prepare(samples.mean(0)))
         imwrite(f"{gene}_stdv.{fileformat}", _prepare(samples.std(0)))
 
         lfc = np.log2(samples.transpose(1, 2, 0)) - np.log2(
             samples.mean((1, 2))
         )
+        lfc_combine = lfc.mean(-1).clip(0) / lfc.std(-1)
+        save_gene_expression(lfc_combine, f"{gene}_lfc_combine.npy")
         imwrite(
             f"{gene}_invcv+.{fileformat}",
-            _prepare(lfc.mean(-1).clip(0) / lfc.std(-1)),
+            _prepare(lfc_combine),
         )
 
     def _save_tensor(gene, samples, tissue_mask):
